@@ -7,7 +7,7 @@ const LeftNavication = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/category')
+        fetch('http://localhost:5000/catagory')
             .then(res => res.json())
             .then(data => setCategories(data))
             .catch(error => console.error(error))

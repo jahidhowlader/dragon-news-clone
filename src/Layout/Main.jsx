@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from '../Shared/Header';
 import { Col, Container, Row } from 'react-bootstrap';
 import RightNavbar from '../Shared/RightNavbar';
@@ -6,18 +6,6 @@ import LeftNavication from '../Shared/LeftNavication';
 import { Outlet } from 'react-router-dom';
 
 const Main = () => {
-
-    const [news, setNews] = useState([])
-
-    useEffect(()=> {
-
-        fetch('http://localhost:5000/')
-        .then(res => res.json())
-        .then(data=> setNews(data))
-        .catch(error => console.error(error))
-    }, [])
-
-    console.log(news);
 
     return (
         <div>
