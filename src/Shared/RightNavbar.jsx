@@ -3,6 +3,8 @@ import { Button, ListGroup } from 'react-bootstrap';
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import Qzone from './Qzone';
 import { Link } from 'react-router-dom';
+import bg from '../../public/assets/bg.png'
+import './RightNavbar.css'
 
 
 const RightNavbar = () => {
@@ -22,17 +24,25 @@ const RightNavbar = () => {
                         <span className='text-primary me-2'><FaFacebook></FaFacebook></span> Facebook
                     </ListGroup.Item></Link>
 
-                    <Link to={'https://twitter.com/JahidHowlader10'} target='_blank'  className='text-decoration-none text-secondary'>
-                    <ListGroup.Item><span className='text-primary me-2'><FaTwitter></FaTwitter></span>  Twitter</ListGroup.Item>
+                    <Link to={'https://twitter.com/JahidHowlader10'} target='_blank' className='text-decoration-none text-secondary'>
+                        <ListGroup.Item><span className='text-primary me-2'><FaTwitter></FaTwitter></span>  Twitter</ListGroup.Item>
                     </Link>
 
-                    <Link to={'https://www.instagram.com/jahidhowlader.info/'} target='_blank'  className='text-decoration-none text-secondary'>
-                    <ListGroup.Item><span className='text-danger me-2'><FaInstagram></FaInstagram></span>  Instagram</ListGroup.Item>
+                    <Link to={'https://www.instagram.com/jahidhowlader.info/'} target='_blank' className='text-decoration-none text-secondary'>
+                        <ListGroup.Item><span className='text-danger me-2'><FaInstagram></FaInstagram></span>  Instagram</ListGroup.Item>
                     </Link>
                 </ListGroup>
             </div>
 
             <Qzone></Qzone>
+
+            <div className='bg-rightnav text-light d-flex justify-content-center align-items-center text-center px-5 mt-3'>
+                <div>
+                    <h3>Create an Amazing Newspaper</h3>
+                    <p className='py-3'>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
+                    <button className='btn btn-danger rounded-0 py-3'>Learn more</button>
+                </div>
+            </div>
         </div>
     );
 };

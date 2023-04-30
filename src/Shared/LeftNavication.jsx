@@ -16,13 +16,13 @@ const LeftNavication = () => {
 
 
     return (
-        <div>
+        <div className='position-sticky top-0'>
             <h4 className='fw-bold'>All Caterogy</h4>
 
             <div className='pt-4'>
                 {
                     categories.map(category => <p key={category.id}>
-                        <Link to={`/category/${category.id}`} className='text-decoration-none ps-4 text-secondary fw-bold '>{category.name}</Link>
+                        <Link to={`/catagory/${category.id}`} className='text-decoration-none ps-4 text-secondary fw-bold '>{category.name}</Link>
                     </p>)
                 }
             </div>
