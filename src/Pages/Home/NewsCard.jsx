@@ -8,8 +8,6 @@ const NewsCard = ({ news }) => {
 
     const { _id, title, details, image_url, author, total_view, rating } = news
 
-    console.log(news);
-
     return (
         <Card className=" my-3 rounded-1">
             <Card.Header className='d-flex gap-3 align-items-center py-2'>
@@ -33,13 +31,13 @@ const NewsCard = ({ news }) => {
                         details.length < 250 ? details :
                             <>
                                 `${details.slice(0, 250)} ...`
-                                <Link to={`/news/:${_id}`} className='d-block'>Read More</Link>
+                                <Link to={`/news/${_id}`} className='d-block'>Read More</Link>
                             </>
                     }
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted">
-                <div>
+            <Card.Footer className="text-muted d-flex align-items-center">
+                <div className='flex-grow-1'>
                     <span>
                         {rating?.number}
                     </span>
