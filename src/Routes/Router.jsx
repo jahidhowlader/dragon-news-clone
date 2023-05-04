@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import Catagory from "../Pages/Catagory/Catagory";
 import NewsLayout from "../Layout/NewsLayout";
 import News from "../Pages/News/News";
+import Test from "../Shared/Test";
 
 
 const Router = createBrowserRouter([
@@ -33,6 +34,10 @@ const Router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
+    },
+    {
+        path: "/test",
+        element: <Test></Test>
     }
 ])
 

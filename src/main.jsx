@@ -4,8 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 import { RouterProvider } from 'react-router-dom';
 import Router from './Routes/Router';
+import AuthProvider from './Provider/AuthProvider';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <RouterProvider router={Router}></RouterProvider>
+    <AuthProvider>
+        <RouterProvider router={Router}></RouterProvider>
+    </AuthProvider>
 )

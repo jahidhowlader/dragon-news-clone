@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../public/assets/logo.png'
 import moment from 'moment';
 import Marquee from "react-fast-marquee";
 import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 
 
 const Header = () => {
+
+    const {displayName} = useContext(AuthContext)
+
     return (<>
         <div className='text-center pt-5'>
             <img className='img-fluid' src={logo} alt="The Dragon News" />
@@ -32,14 +37,16 @@ const Header = () => {
                 <Nav className="mx-auto ">
                     
                     <Nav.Link href="/">
-                        <Link to="/">Home</Link>
+                         Home
                     </Nav.Link>
                     <Nav.Link href="#pricing">About</Nav.Link>
                     <Nav.Link href="#pricing">Career</Nav.Link>
 
                 </Nav>
                 <Nav className='d-flex align-items-center'>
-                    <Nav.Link className='border' href="#deets">JH</Nav.Link>
+                    <Nav.Link  >
+                        <FaUserCircle className='text-dark display-6'></FaUserCircle>
+                    </Nav.Link>
                     <Nav.Link eventKey={2} href="#memes">
                         <Button variant="dark px-4 rounded-0">Login</Button>
                     </Nav.Link>
