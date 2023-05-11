@@ -5,6 +5,8 @@ import Catagory from "../Pages/Catagory/Catagory";
 import NewsLayout from "../Layout/NewsLayout";
 import News from "../Pages/News/News";
 import Test from "../Shared/Test";
+import Signin from "../Pages/Authentication/Signin";
+import AuthLayout from "../Layout/AuthLayout";
 
 
 const Router = createBrowserRouter([
@@ -20,25 +22,31 @@ const Router = createBrowserRouter([
             {
                 path: 'catagory/:id',
                 element: <Catagory></Catagory>,
-                loader: ({params}) => fetch(`http://localhost:5000/catagory/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`)
             }
         ]
     },
     {
-        path: '/news',
+        path: 'news',
         element: <NewsLayout></NewsLayout>,
-        children : [
+        children: [
             {
                 path: ':id',
                 element: <News></News>,
-                loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
     },
     {
-        path: "/test",
-        element: <Test></Test>
-    }
+        path: 'auth',
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                path: 'signin',
+                element: <Signin></Signin>,
+            }
+        ]
+    },
 ])
 
 export default Router;
